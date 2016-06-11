@@ -74,7 +74,9 @@ def extractBookData(strXml, listWidget_box, listWidget_audi, listWidget_sales, l
 	listWidget_box.clear()	#검색할때마다 초기화할려고
 	listWidget_audi.clear()
 	listWidget_sales.clear()
-
+	BoxData.clear()
+	BoxData.append(0)
+	
 	for item in itemElements:
 		rank = item.find("rank")
 		strTitle = item.find("movieNm")
@@ -101,6 +103,8 @@ def extractBookData1(strXml, listWidget_info):
 
 	tree = ElementTree.fromstring(strXml)
 	itemElements1 = tree.getiterator("movieInfo")  # return list type
+
+	MovieData.clear()
 
 	for item in itemElements1:
 		strTitle = item.find("movieNm")
